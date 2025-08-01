@@ -1,0 +1,27 @@
+# === Node.js & Angular ===
+node_modules/
+dist/
+.angular/
+.env
+.env.local
+
+# === .NET ===
+bin/
+obj/
+*.user
+*.suo
+*.db
+*.log
+*.pdb
+
+# === General ===
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.tmp
+
+# === Logs ===
+*.log
+logs/
