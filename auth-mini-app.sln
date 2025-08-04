@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "auth-app.Api", "auth-app.Api\auth-app.Api.csproj", "{479D5614-8A54-463C-B80E-62F8DA1BC70D}"
+EndProject
+Project("{54a90642-561a-4bb1-a94e-469adee60c69}") = "auth-app.Client", "auth-app.Client\auth-app.Client.esproj", "{7770670D-736C-480D-B720-FC9E62150581}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{479D5614-8A54-463C-B80E-62F8DA1BC70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{479D5614-8A54-463C-B80E-62F8DA1BC70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{479D5614-8A54-463C-B80E-62F8DA1BC70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{479D5614-8A54-463C-B80E-62F8DA1BC70D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7770670D-736C-480D-B720-FC9E62150581}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7770670D-736C-480D-B720-FC9E62150581}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7770670D-736C-480D-B720-FC9E62150581}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7770670D-736C-480D-B720-FC9E62150581}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

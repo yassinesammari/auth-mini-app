@@ -21,6 +21,7 @@ Thumbs.db
 .idea/
 *.swp
 *.tmp
+.vs/
 
 # === Logs ===
 *.log
