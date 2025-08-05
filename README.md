@@ -108,7 +108,7 @@ Frontend will be available at: `http://localhost:4200`
 | POST   | `/api/Auth/register`    | No            | Register a new user     |
 | POST   | `/api/Auth/login`       | No            | Login and receive JWT   |
 | GET    | `/api/Auth/GetUser`     | Yes           | Get current logged user |
-| GET    | `/api/User/GetAllUsers` | No            | Get list of all users   |
+| GET    | `/api/User/GetAllUsers` | Yes           | Get list of all users   |
 
 ---
 
