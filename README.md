@@ -38,7 +38,7 @@ auth-mini-app/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/auth-mini-app.git
+git clone https://github.com/yassinesammari/auth-mini-app.git
 cd auth-mini-app
 ```
 
@@ -130,8 +130,8 @@ MIT License - free to use and extend for your projects.
 ## 👨‍💻 Author
 
 Your Name
-GitHub: [@yourusername](https://github.com/yourusername)
-Email: [your.email@example.com](mailto:your.email@example.com)
+GitHub: [@yassinesammari](https://github.com/yassinesammari)
+Email: [sammariyassine@gmail.com](mailto:sammariyassine@gmail.com)
 
 ---
 
