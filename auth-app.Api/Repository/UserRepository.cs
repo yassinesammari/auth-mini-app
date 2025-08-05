@@ -21,15 +21,17 @@ namespace auth_app.Api.Repository
         }
 
         // Get a user by ID
-        public async Task<User> GetUserById(string id)
+        public async Task<User> GetUserById(Guid id)
         {
             return await _userCollection.Find<User>(user => user.Id == id).FirstOrDefaultAsync();
         }
 
         // Create new user
-        public async Task CreateNewUser(User user)
+        public async Task<Guid> CreateNewUser(User user)
         {
+            user.Id = Guid.NewGuid();
             await _userCollection.InsertOneAsync(user);
+            return user.Id;
         }
 
         // Get a user by Email

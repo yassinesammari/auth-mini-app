@@ -1,0 +1,37 @@
+<div class="login-container">
+    <form class="login-form" [formGroup]="authForm" (ngSubmit)="onSubmit()">
+      <h2 class="login-title">Login</h2>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+        <div *ngIf="authForm.controls['email'].invalid && authForm.controls['email'].touched" class="error">
+          Please enter a valid email.
+        </div>
+      </div>  
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter your password"
+        />
+        <div *ngIf="authForm.controls['password'].invalid && authForm.controls['password'].touched" class="error">
+          Password is required.
+        </div>
+      </div>
+      <button type="submit" class="login-button" [disabled]="authForm.invalid">
+        Login
+      </button>
+      <p class="signup-prompt">
+        Don't have an account? <a routerLink="/register">Sign up</a>
+      </p>
+    </form>
+    <app-alert></app-alert>
+  </div>
+  

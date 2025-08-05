@@ -44,6 +44,7 @@ builder.Services.AddAuthentication(options =>
 
 // Register services
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<UserService>();
 
 // Register collections
 builder.Services.AddSingleton<UserRepository>();

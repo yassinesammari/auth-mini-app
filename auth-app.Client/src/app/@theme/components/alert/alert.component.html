@@ -1,0 +1,4 @@
+<div class="alert-container" *ngIf="isVisible" [ngClass]="[alertType, 'show']">
+  <span class="message">{{ message }}</span>
+  <button class="close-btn" (click)="closeAlert()">&#10005;</button>
+</div>

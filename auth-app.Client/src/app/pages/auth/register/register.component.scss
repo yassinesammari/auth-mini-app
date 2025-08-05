@@ -1,0 +1,147 @@
+$register-bg-clr: #f5f0e6;            
+$base-clr: #ffffff;                 
+$line-clr: #d8cfc4;                 
+$hover-clr: #ede5db;                
+$text-clr: #5b4636;                 
+$accent-clr: #a67c52;               
+$secondary-text-clr: #7e6a54;       
+$error-clr: #cc4b37;                
+$border-radius: 0.5em;              
+$box-shadow: rgba(166, 124, 82, 0.3); 
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: $register-bg-clr;
+
+  .register-form {
+    background-color: $base-clr;
+    padding: 2em;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 10px $box-shadow;
+    width: 100%;
+    max-width: 500px;
+    color: $text-clr;
+    animation: fadeIn 0.5s ease-in-out;
+
+    .register-title {
+      font-size: 1.5em;
+      font-weight: 600;
+      text-align: center;
+      color: $text-clr;
+      margin-bottom: 1em;
+    }
+    .form-group {
+      margin-bottom: 1.5em;
+
+      label {
+        display: block;
+        font-size: 0.9em;
+        color: $secondary-text-clr;
+        margin-bottom: 0.5em;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 0.85em;
+        border-radius: $border-radius;
+        border: 1px solid $line-clr;
+        background-color: $base-clr;
+        color: $text-clr;
+
+        &::placeholder {
+          color: $secondary-text-clr;
+        }
+        &:focus {
+          border-color: $accent-clr;
+          outline: none;
+          background-color: $hover-clr;
+        }
+        &:hover {
+          background-color: $hover-clr;
+        }
+      }
+    }
+    .profile-section {
+      border: 1px solid $line-clr;
+      border-radius: $border-radius;
+      padding: 1em;
+      margin-top: 1.5em;
+
+      legend {
+        font-weight: 600;
+        color: $text-clr;
+      }
+    }
+    .register-button {
+      width: 100%;
+      padding: 0.85em;
+      background-color: $accent-clr;
+      color: #fff;
+      border-radius: $border-radius;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: darken($accent-clr, 10%);
+      }
+      &:disabled {
+        background-color: lighten($accent-clr, 20%);
+        cursor: not-allowed;
+      }
+    }
+    .signin-prompt {
+      text-align: center;
+      font-size: 0.9em;
+      margin-top: 1em;
+      color: $secondary-text-clr;
+
+      a {
+        color: $accent-clr;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+    .error {
+      color: $error-clr;
+      font-size: 0.85em;
+      margin-top: 0.5em;
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .register-form {
+    padding: 1.5em;
+    max-width: 100%;
+  }
+
+  .register-title {
+    font-size: 1.3em;
+  }
+
+  .form-group label {
+    font-size: 0.85em;
+  }
+
+  .register-button {
+    padding: 0.75em;
+  }
+}

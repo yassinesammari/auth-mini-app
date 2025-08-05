@@ -6,16 +6,12 @@ namespace auth_app.Api.Model
     public class User
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public string? Id { get; set; }
-
-        [BsonElement("email")]
-        public string Email { get; set; }
-
-        [BsonElement("password")]
-        public string Password { get; set; }
-
-        [BsonElement("createdAt")]
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        [BsonRepresentation(BsonType.String)]
+        public Guid Id { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public string? FirstName { get; set; }
+        public string? LastName { get; set; }
+        public DateTime? CreatedAt { get; set; }
     }
 }

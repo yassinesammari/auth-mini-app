@@ -1,0 +1,76 @@
+$success-color: #4caf50;
+$error-color: #f44336;
+$info-color: #2196f3;
+$warning-color: #ff9800;
+$text-color: #fff;
+$border-radius: 0.5em;
+$fade-duration: 0.3s;
+$show-duration: 3s;
+$shadow-color: rgba(0, 0, 0, 0.2);
+
+.alert-container {
+  position: fixed;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  min-width: 300px;
+  max-width: 90%;
+  padding: 1em;
+  color: $text-color;
+  border-radius: $border-radius;
+  box-shadow: 0 4px 10px $shadow-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity $fade-duration ease-in-out;
+
+  &.show {
+    opacity: 1;
+    pointer-events: auto;
+    animation: fade-out $show-duration forwards;
+  }
+  &.success {
+    background-color: $success-color;
+  }
+  &.error {
+    background-color: $error-color;
+  }
+  &.info {
+    background-color: $info-color;
+  }
+  &.warning {
+    background-color: $warning-color;
+  }
+  .message {
+    flex: 1;
+    font-size: 0.95em;
+    margin-right: 1em;
+  }
+  .close-btn {
+    background: none;
+    border: none;
+    color: $text-color;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.2s;
+
+    &:hover {
+      color: lighten($text-color, 20%);
+    }
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

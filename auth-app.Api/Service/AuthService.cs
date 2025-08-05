@@ -24,7 +24,7 @@ namespace auth_app.Api.Service
         {
             var claims = new[]
             {
-                new Claim("id", user.Id),
+                new Claim("id", user.Id.ToString()),
                 new Claim("Email", user.Email)
             };
 
@@ -62,17 +62,19 @@ namespace auth_app.Api.Service
         }
 
         // Create a new user
-        public async Task<bool> CreateNewUser(User user)
+        public async Task<Guid?> CreateNewUser(User user)
         {
             var existingUser = await _userRepository.GetUserByEmail(user.Email);
             if (existingUser != null)
             {
-                return false; 
+                return null;
             }
-            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
-            await _userRepository.CreateNewUser(user);
 
-            return true;
+            user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
+            user.Id = Guid.NewGuid();
+
+            await _userRepository.CreateNewUser(user);
+            return user.Id;
         }
 
         // Get a user by email

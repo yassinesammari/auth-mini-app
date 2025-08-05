@@ -1,0 +1,48 @@
+$header-bg: #3a2f28;
+$text-light: #f5f0e6;
+$hover-color: #d1bfa8;
+$shadow-color: rgba(0, 0, 0, 0.2);
+$icon-size: 24px;
+
+.custom-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: $header-bg;
+  color: $text-light;
+  box-shadow: 0 4px 12px $shadow-color;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .app-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $text-light;
+      margin: 0;
+    }
+  }
+  .header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    .logout-icon {
+      font-size: $icon-size;
+      color: $text-light;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}

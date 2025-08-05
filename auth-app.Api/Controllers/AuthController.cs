@@ -24,35 +24,25 @@ namespace auth_app.Api.Controllers
                 var existingUser = await _authService.GetUserByEmail(request.Email);
                 if (existingUser != null)
                 {
-                    return Conflict(new RegistrationOutputDto
-                    {
-                        Result = false,
-                        Message = "User already exists with this email."
-                    });
+                    return Conflict("A user with this email already exists.");
                 }
 
                 var newUser = new User
                 {
                     Email = request.Email,
                     Password = request.Password,
+                    LastName = request.LastName,
+                    FirstName = request.FirstName,
                     CreatedAt = DateTime.UtcNow
                 };
 
-                await _authService.CreateNewUser(newUser);
+                var id = await _authService.CreateNewUser(newUser);
 
-                return Ok(new RegistrationOutputDto
-                {
-                    Result = true,
-                    Message = "User registered successfully."
-                });
+                return CreatedAtAction(nameof(Register), new { id = id }, id);
             }
             catch (Exception)
             {
-                return BadRequest(new RegistrationOutputDto
-                {
-                    Result = false,
-                    Message = "An error occurred during registration."
-                });
+                return StatusCode(500, "An error occurred while creating the user.");
             }
         }
 
@@ -71,29 +61,14 @@ namespace auth_app.Api.Controllers
 
                 if (token == null)
                 {
-                    return Unauthorized(new LoginOutputDto
-                    {
-                        Token = null,
-                        Result = false,
-                        Message = "Invalid email or password."
-                    });
+                    return Unauthorized("Invalid email or password.");
                 }
 
-                return Ok(new LoginOutputDto
-                {
-                    Token = token,
-                    Result = true,
-                    Message = "Login successful."
-                });
+                return Ok(new { token });
             }
             catch (Exception)
             {
-                return StatusCode(500, new LoginOutputDto
-                {
-                    Token = null,
-                    Result = false,
-                    Message = "An unexpected error occurred. Please try again later."
-                });
+                return StatusCode(500, "Unexpected error. Please try again later.");
             }
         }
 
